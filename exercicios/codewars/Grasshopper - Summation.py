@@ -11,3 +11,10 @@ def summation(num):
         sum = sum + num
         num -= 1
     return sum
+
+def summation(num):
+    sum = 0
+    for i in range(0, num):
+        i += 1
+        sum += i
+    return sum
