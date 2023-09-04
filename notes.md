@@ -93,6 +93,7 @@ print(titulo.title())
 #saida
 Moon Facts
 ```
+
 #### Método `split()`
 - Sem argumentos, ela separa todos as palavras com espaço em um array
 - Ao chamar o mesmo método com argumentos (ex: `split("/n")`) separa de acordo com a posição do argumento
@@ -102,6 +103,7 @@ print(moon_facts.split())
 #saida
 ("The","Moon","is","drifting","away","from","the","Earth.")
 ```
+
 #### Método `join()`
 - Faz a função contrária, ele junta itens de listas, onde é necessário indicar o item que ficará entre os itens concatenados
 ```python
@@ -110,6 +112,7 @@ print(' '.join(moon_facts))
 #saida
 "The Moon is drifting away from the Earth. On average, the Moon is moving about 4cm every year."
 ```
+
 #### Método `find()`
 Busca uma substring dentro de uma string
 ```python
@@ -120,39 +123,67 @@ True
 ```
 - Quando não encontra a string buscada a resposta na saída é “-1”
     - Quando a string é encontrada é retornado a posição em que se encontra a string
+  
 #### Método `count()`
-- Conta quantas ocorrências existem da busca na string
-#### Métodos `lower()`
-- No método `lower()` todas as letras ficam no minúsculo
-#### Métodos `upper()` alteram a string
-- E no método `upper()` todas as letras ficam no maiúsculo
+Conta quantas ocorrências existem da busca na string
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.count(o))
+#saida
+3
+```
+
+#### Método `lower()`
+Torna todas as letras ficam no minúsculo
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.lower())
+#saida
+"the moon is drifting away from the earth"
+```
+
+#### Métodos `upper()`
+Todas as letras ficam no maiúsculo
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.upper())
+#saida
+"THE MOON IS DRIFTING AWAT FROM THE EARTH"
+```
+
 #### Método `isnumeric()`
-é buscato todos os itens númericos no item
+Confere se todos os caracteres da string são números
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.isnumeric())
+#saida
+False
+```
+
 #### Método `isdecimal()`
-é parecido com o `isnumeric()` porém só é buscado is itens decimais
-#### Métodos `startwith()` e `endwith()`
-também são similares, porém o primeiro retorna o primeiro caractere e o segundo retorna o último caracter
+Verifica se os caracteres são decimais, podem ser números na base 10, e.g. U+0660, ARABIC-INDIC DIGIT ZERO. Basicamente qualquer caractere da categoria "Nd" do Unicode General Category “Nd”.
+
+#### Método `startwith()`
+Verifica se a substring indicada no método existe no começo da string indicada
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.lower())
+#saida
+"The Moon is drifting away from the Earth."
+```
+
+#### Método `endwith()`
+Verifica se a substring indicada no método existe no fim da string indicada
+```python
+moon_facts = ["The Moon is drifting away from the Earth."]
+print(moon_facts.lower())
+#saida
+"The Moon is drifting away from the Earth."
+```
+
 #### Método `replace()`
 dois argumentos devem ser indicados, o dado a ser tirado e o que deve ser adicionado
-https://docs.python.org/pt-br/3/library/string.html
-
-## Ferramentas
-### Datas
-- Importar o módulo "date"
-```python
-from datetime import date
-```
-https://docs.python.org/pt-br/3/library/datetime.html
-
-
-
-
-
-
-
-
-
-# **O método format()**
+#### Método format()
 
 O método `.format()` usa chaves (`{}`) como espaços reservados em uma cadeia de caracteres e usa a atribuição de variável para substituir o texto.
 
@@ -165,17 +196,114 @@ print("On the Moon, you would weigh about {} of your weight on Earth.".format(ma
 mass_percentage = "1/6"
 print("""You are lighter on the {0}, because on the {0} you would weigh about {1} of your weight on Earth.""".format("Moon", mass_percentage))
 ```
+https://docs.python.org/pt-br/3/library/string.html
+
+## Interpolação de string
+
+string = s
+
+int = d ou s
+
+float = f
+
+hexadecimal = x ou X (ABCDEF0123456789)
+
+```python
+nome = 'Luiz'
+preco = 100,2546817
+variavel = '%s, o preço é R$%0.2f' % (nome, preco)
+
+print(variavel)
+print ('O hexadecimal de %i é %08x' % (preco, preco)) #o 0 é o caractere e o 8 é a quantidade de caracteres a serem preenchidos
+```
+
+formatação de string
+
+(Caractere)(><^)(quantidade)
+
+> - Esquerda
+
+< - Direita
+
+^ - Centro
+
+= - Força o número a aparecer antes dos zeros
+
+Sinal - + ou -
+
+Conversion flags - !r !s !a
+
+```python
+variavel = 'ABC'
+print(f'{variavel}')
+print(f'{variavel: >10}')
+print(f'{variavel: <10}.')
+print(f'{variavel: ^10}.')
+print(f'{1000.4873648123746:0=+10,.1f}')
+print(f'O hexadecimal de 1500 é {1500:08X}')
+print(f'{variavel!r}')
+```
+
+Fatiamento de string
+
+Fatiamento [i:f:p] [::]
+
+variavel = 'Olá mundo'
+print(variavel[::-1])
+
+```python
+frase = 'aaaooo'
+
+i = 0
+qtd_apareceu_mais_vezes = 0
+letra_apareceu_mais_vezes = ''
+
+while i < len(frase):
+    letra_atual = frase[i]
+
+    if letra_atual == ' ':
+        i += 1
+        continue
+
+    qtd_apareceu_mais_vezes_atual = frase.count(letra_atual)
+
+    if qtd_apareceu_mais_vezes < qtd_apareceu_mais_vezes_atual:
+        qtd_apareceu_mais_vezes = qtd_apareceu_mais_vezes_atual
+        letra_apareceu_mais_vezes = letra_atual
+
+    i += 1
+
+print(
+    'A letra que apareceu mais vezes foi '
+    f'"{letra_apareceu_mais_vezes}" que apareceu '
+    f'{qtd_apareceu_mais_vezes}x'
+)
+```
+
+
+
+
+
+
+- dicionário acessa por chaves {} e classe acessa por ponto .
+
+
+```python
+sum = 1 + 2
+print(sum)
+```
+
+- O print é uma função que imprime o valor no console
+- Qualquer função é executada com um parênteses ( )
+
+
 
 # Manipulação de numerais
 
 - Ao usar o método `abs()` o número é convertido em número absoluto, ignorando se é positivo ou negativo
 - Para se arredondar um número utilize o método `round()`, quando o decimal for maior ou igual que .5 o arredondamento serão para cima, se for menor que .5 o arredondamento será para baixo
 
-# Biblioteca de matemática
-
-```python
-from math import ceil, floor
-```
+# Loops
 
 # Listas
 
@@ -230,7 +358,7 @@ tep)
 - O nome da lista (`countdown`, no exemplo anterior) ou do objeto iterável que você deseja percorrer com o loop, seguido de dois-pontos (`:`).
 - O código que você deseja executar para cada item do objeto iterável, separado por espaço em branco aninhado.
 - Com a função `sleep()`, é possível colocar um tempo de espera para a próxima leitura do loop
-
+  
 # Dicionário
 
 ```python
@@ -334,115 +462,20 @@ Funções
     ```
     
 
-## Interpolação de string
 
-string = s
+## Ferramentas
+### Datas
+- Importar o módulo "date"
+```python
+from datetime import date
+```
+https://docs.python.org/pt-br/3/library/datetime.html
 
-int = d ou s
-
-float = f
-
-hexadecimal = x ou X (ABCDEF0123456789)
+### Biblioteca de matemática
 
 ```python
-nome = 'Luiz'
-preco = 100,2546817
-variavel = '%s, o preço é R$%0.2f' % (nome, preco)
-
-print(variavel)
-print ('O hexadecimal de %i é %08x' % (preco, preco)) #o 0 é o caractere e o 8 é a quantidade de caracteres a serem preenchidos
+from math import ceil, floor
 ```
-
-formatação de string
-
-(Caractere)(><^)(quantidade)
-
-> - Esquerda
-
-< - Direita
-
-^ - Centro
-
-= - Força o número a aparecer antes dos zeros
-
-Sinal - + ou -
-
-Conversion flags - !r !s !a
-
-```python
-variavel = 'ABC'
-print(f'{variavel}')
-print(f'{variavel: >10}')
-print(f'{variavel: <10}.')
-print(f'{variavel: ^10}.')
-print(f'{1000.4873648123746:0=+10,.1f}')
-print(f'O hexadecimal de 1500 é {1500:08X}')
-print(f'{variavel!r}')
-```
-
-Fatiamento de string
-
-Fatiamento [i:f:p] [::]
-
-variavel = 'Olá mundo'
-print(variavel[::-1])
-
-```python
-frase = 'aaaooo'
-
-i = 0
-qtd_apareceu_mais_vezes = 0
-letra_apareceu_mais_vezes = ''
-
-while i < len(frase):
-    letra_atual = frase[i]
-
-    if letra_atual == ' ':
-        i += 1
-        continue
-
-    qtd_apareceu_mais_vezes_atual = frase.count(letra_atual)
-
-    if qtd_apareceu_mais_vezes < qtd_apareceu_mais_vezes_atual:
-        qtd_apareceu_mais_vezes = qtd_apareceu_mais_vezes_atual
-        letra_apareceu_mais_vezes = letra_atual
-
-    i += 1
-
-print(
-    'A letra que apareceu mais vezes foi '
-    f'"{letra_apareceu_mais_vezes}" que apareceu '
-    f'{qtd_apareceu_mais_vezes}x'
-)
-```
-
-
-
-
-
-
-- dicionário acessa por chaves {} e classe acessa por ponto .
-
-
-```python
-sum = 1 + 2
-print(sum)
-```
-
-- O print é uma função que imprime o valor no console
-- Qualquer função é executada com um parênteses ( )
-
-
-
-
-
-
-
-
-
-
-
-
 ## Ambientes virtuais
 Ambientes virtuais ajudam o programador a reunir todos os recursos necessários, como os requieriments.txt e também evitar que outros recursos atrapalhem o 
 
@@ -482,7 +515,5 @@ Os pacotes usam algo chamado *controle de versão semântico*. Isso significa q
 - O número mais à esquerda é chamado de `Major`. Se esse número aumentar, isso significará que muitas coisas mudaram e você não poderá mais supor que os métodos sejam nomeados da mesma forma ou tenham o mesmo número de argumentos que antes.
 - O número do meio é chamado de `Minor`. Se ele mudar, isso significará que um recurso será adicionado.
 - O número mais à direita é chamado de `Patch`. Se esse número aumentar, provavelmente significará que um bug foi corrigido.
-
-
 
 https://www.datacamp.com/tutorial/f-string-formatting-in-python?utm_source=google&utm_medium=paid_search&utm_campaignid=19589720824&utm_adgroupid=143216588537&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=665485585140&utm_targetid=aud-299261629574:dsa-1947282172981&utm_loc_interest_ms=&utm_loc_physical_ms=1001773&utm_content=dsa~page~community-tuto&utm_campaign=230119_1-sea~dsa~tutorials_2-b2c_3-row-p2_4-prc_5-na_6-na_7-le_8-pdsh-go_9-na_10-na_11-na-ltsjul23&gclid=CjwKCAjw8symBhAqEiwAaTA__ErOSRXBRe_RD5fQFsIVhfL13sIlElgjVZtwIrqaepXRsAnsrwPlLxoCTY0QAvD_BwE
