@@ -150,10 +150,10 @@ Verifica se na string existem números (qualquer um da tabela encode)
 #### Método `isdecimal()`
 Verifica se a string é feita apenas de números decimais (0-9)
 
-#### Métodos `startwith()` 
+#### Método `startwith()` 
 Verifica se a string inicia com a substring solicitada
 
-#### e `endwith()`
+#### Método `endwith()`
 Verifica se a string acaba com a substring solicitada
 
 #### Método `replace()`
@@ -177,15 +177,11 @@ print("On the Moon, you would weigh about {} of your weight on Earth.".format(ma
 mass_percentage = "1/6"
 print("""You are lighter on the {0}, because on the {0} you would weigh about {1} of your weight on Earth.""".format("Moon", mass_percentage))
 ```
-## Interpolação de string
-
-string = s
-
-int = d ou s
-
-float = f
-
-hexadecimal = x ou X (ABCDEF0123456789)
+### Interpolação de string
+- string = s
+- int = d ou s
+- float = f
+- hexadecimal = x ou X (ABCDEF0123456789)
 
 ```python
 nome = 'Luiz'
@@ -193,25 +189,19 @@ preco = 100,2546817
 variavel = '%s, o preço é R$%0.2f' % (nome, preco)
 
 print(variavel)
-print ('O hexadecimal de %i é %08x' % (preco, preco)) #o 0 é o caractere e o 8 é a quantidade de caracteres a serem preenchidos
+print ('O hexadecimal de %i é %08x' % (preco, preco))
+# O 0 é o caractere e o 8 é a quantidade de caracteres a serem preenchidos
 ```
+
 ### formatação de string
-
-(Caractere)(><^)(quantidade)
-
-> - Esquerda
-
-< - Direita
-
-^ - Centro
-
-= - Força o número a aparecer antes dos zeros
-
-Sinal - + ou -
-
-Conversion flags - !r !s !a
-
 ```python
+# > - Esquerda
+# < - Direita
+# ^ - Centro
+# = - Força o número a aparecer antes dos zeros
+# Sinal - + ou -
+# Conversion flags - !r !s !a
+
 variavel = 'ABC'
 print(f'{variavel}')
 print(f'{variavel: >10}')
@@ -221,12 +211,9 @@ print(f'{1000.4873648123746:0=+10,.1f}')
 print(f'O hexadecimal de 1500 é {1500:08X}')
 print(f'{variavel!r}')
 ```
+
 ### Fatiamento de string
-
 Fatiamento [i:f:p] [::]
-
-variavel = 'Olá mundo'
-print(variavel[::-1])
 
 ```python
 frase = 'aaaooo'
@@ -256,7 +243,6 @@ print(
     f'{qtd_apareceu_mais_vezes}x'
 )
 ```
-
 https://docs.python.org/pt-br/3/library/string.html
 
 ### Manipulação de numerais
@@ -293,15 +279,31 @@ https://docs.python.org/pt-br/3/library/functions.html?highlight=int#int
 ```python
 planets = ["Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune"]
 ```
-- Para acessar os itens da lista deve ser colocado o índice entre colchetes [ ] (ex: `planets[5]`)
-- Os índices sempre se iniciam pelo índice 0 e quando o índice é negativo é contado a partir do último item
-- Para determinar o tamanho de uma lista usa-se a função `len()`, entre parenteses coloca-se a variável da lista
-- Para adicionar um item no final da lista, usa-se o método `append()`, entre parenteses coloca-se o valor que quer adicionar
-- Para remover usa-se o método `pop()`, que remove o útimo item da lista
-- Para localizar um item utilizar o método `index()`, indicando o valor a ser descoberto o indez
-- As funções min() e max() indicam o menor número da lista e o maior número da lista
-- Para selecionar itens específicos da lista indique a variável e o index do primeiro item e onde é necessário fazer o corte, esta cria uma nova lista sem alterar a lista original
+Para acessar os itens da lista deve ser colocado o índice entre colchetes [ ] (ex: `planets[5]`), os índices sempre se iniciam pelo índice 0 e quando o índice é negativo é contado a partir do último item
+- É possível unir duas listas com um +
+  
+#### Função `len()`
+Determina o tamanho do array, entre parenteses coloca-se a variável da lista
 
+#### Método `append()`
+Para adicionar um item no final da lista, usa-se o método , entre parenteses coloca-se o valor que quer adicionar
+
+#### Método `pop()`
+Remove itens da lista
+
+#### Método `index()`
+Localiza um item dentro do array
+  
+#### Função `min()`
+Indica o menor número do array
+
+#### Função `max()`
+Indica o maior número do array
+
+#### Método `sort()`
+Organiza listas de acordo com a ordem alfabética ou numérica
+- Caso queira em ordem decrescente ou contraria à alfabética é necessário coloca-se `reverse = True` como argumento
+  
 ```python
 planets[0:3]
 
@@ -309,52 +311,46 @@ resposta:
 ["Mercury", "Venus", "Earth"]
 ```
 
-- É possível unir duas listas com um +
-- Para classificar listas usa-se o método `sort()`, assim sendo automaticamente ordenado por ordem alfabética ou numérica
-    - Caso queira em ordem decrescente ou contraria à alfabética é necessário coloca-se `reverse = True` como argumento
-
 ### Condições
-A condição If é respondida com booleanos (true ou false), se a instrução for entendida com `True`, será realizada, se for `False` irá dar continuada para a próxima condição
+#### If
+É respondida com booleanos (`True` ou `False`), se a instrução for entendida com `True`, será realizada, se for `False` irá dar continuada para a próxima condição
+
 ```python
 if a < b:
-	=return c
+	return c
 elif a == b:
 	return d
 else:
 	return e
 ```
 
-# While
-
+### Loops
+#### While
+O loop `While` será realizado enquanto a condição  for verdadeira
 ```python
-user_input = ''
-
-while user_input.lower() != 'done':
-    user_input = input('Enter a new value, or done when done')
+x = 1
+while x < 10:
+    x += 1
+    print(x)
 ```
 
-# For
-
+#### For
 ```python
 countdown = [4, 3, 2, 1, 0]
 for number in countdown:
     print(number)
-print("Blast off!! 🚀")
 
-for i in range(start, stop, s
-tep)
+# for i in range(start, stop, step)
+
+for i in range(5)
+    print(i)
 ```
 
-- A palavra `for`, seguida por um espaço.
-- O nome da variável que você deseja criar para cada valor da sequência (`number`).
-- A palavra `in`, cercada por espaços.
-- O nome da lista (`countdown`, no exemplo anterior) ou do objeto iterável que você deseja percorrer com o loop, seguido de dois-pontos (`:`).
-- O código que você deseja executar para cada item do objeto iterável, separado por espaço em branco aninhado.
-- Com a função `sleep()`, é possível colocar um tempo de espera para a próxima leitura do loop
+##### Método `sleep()`
+Define um tempo de espera para a próxima leitura do loop
 
-# Dicionário
+### Dicionário
 - dicionário acessa por chaves {} e classe acessa por ponto .
-
 ```python
 planet = {
     'name': 'Earth',
@@ -362,63 +358,37 @@ planet = {
 }
 ```
 
-- Para ler os valores de respectivas chaves do dicionário usa-se o método `get()`
-    
-    ```python
-    print(planet.get['name'])
-    ```
-    
-- Para modificar o valor da chave de um dicionário utiliza-se o método `update()`, a principal vantagem de usar `update` é a capacidade de modificar vários valores em apenas uma operação
-    
-    ```python
-    planet.update({'name': 'Makemake'})
-    
-    ou
-    
-    planet['name'] = 'Makemake'
-    ```
-    
-- Adicionar e remover chaves
-    
-    ```python
-    Para adicionar escreva dessa forma:
-    planet['orbital period'] = 4333
-    
-    # planet dictionary now contains: {
-    #   name: 'jupiter'
-    #   moons: 79
-    #   orbital period: 4333
-    # }
-    
-    Para remover utilize o método .pop()
-    planet.pop('orbital period')
-    
-    # planet dictionary now contains: {
-    #   name: 'jupiter'
-    #   moons: 79
-    # }
-    ```
-    
-- Tipos de dados complexos
-    - Quando o dado tem uma chave dentro de outra chave:
-        
-        ```python
-        planet['diameter (km)'] = {
-            'polar': 133709,
-            'equatorial': 142984
-        }
-        ```
-- Para resgatar o dado utiliza-se a encadeamento de colchetes ou `get()`
-    
-    ```python
-    print(f'{planet["name"]} polar diameter: {planet["diameter (km)"]["polar"]}')
-    
-    ou
-    
-    print(planet.get('name') + " polar diameter: " + planet["diameter (km)"].get('polar'))
-    ```
-    
-- Pra recuperar chaves e valores usa-se o método `keys()`
+#### Método `get()`
+Usa-se para ler os valores de respectivas chaves do dicionário 
+```python
+print(planet.get['name'])
+```
+
+#### Método `update()`
+Modifica o valor da chave de um dicionário
+```python
+planet.update({'name': 'Makemake'})
+planet['name'] = 'Makemake'
+```
+```python
+planet['orbital period'] = 4333
+ 
+# planet dictionary now contains: {
+#   name: 'jupiter'
+#   moons: 79
+#   orbital period: 4333
+# }
+
+planet.pop('orbital period')
+  
+# planet dictionary now contains: {
+#   name: 'jupiter'
+#   moons: 79
+# }
+```
+
+#### Método `keys()`
+Pra recuperar chaves
 
 ```python
 rainfall = {
@@ -430,29 +400,56 @@ rainfall = {
 for key in rainfall.keys()
 	print(key)
 ```
-### Funções
 
-- Funções sem argumentos
-    - Para criar uma função use `def + um nome para a função`
+#### Dados complexos
+Quando o dado tem uma chave dentro de outra chave:
+```python
+planet['diameter (km)'] = {
+    'polar': 133709,
+    'equatorial': 142984
+}
+```
+
+### Funções
+#### Funções sem argumentos
+Para criar uma função use `def + um nome para a função`
+```python
+def rocket_parts():
+    print("payload, propellant, structure")
+```
+No caso essa função não tem argumentos para que ela aconteça, por isso os parenteses estão vazios
+
+#### Funções com argumentos
+```python
+def days_to_complete(distance, speed):
+    hours = distance/speed
+    return hours/24
     
-    ```python
-    def rocket_parts():
-        print("payload, propellant, structure")
-    ```
-    
-    - No caso essa função não tem argumentos para que ela aconteça, por isso os parenteses estão vazios
-    - Para executa-la chama ela pelo nome e usa-se parenteses `rocket_parts()`
-- Funções com argumentos
-    
-    ```python
-    def days_to_complete(distance, speed):
-        hours = distance/speed
-        return hours/24
-    
-    days_to_complete(1500, 60)
-    
-    ```
-- Qualquer função é executada com um parênteses ( )
+days_to_complete(1500, 60)
+```
+
+#### lambda
+Cria uma função de forma fácil
+```python
+f = lambda x: x**2
+
+print(f(3))
+# resultado
+9
+```
+
+#### Método `map()`
+Aplica uma função à todos os itens de uma lista
+```python
+numeros = [1, 2, 3, 4, 5]
+f = lambda x: x**2
+
+lista_quadrados = list(map(f, numeros))
+print(lista_quadrados)
+
+# resultado
+[1, 4, 9, 6, 25]
+```
 ---
 ## Ferramentas
 ### Datas
