@@ -505,10 +505,4 @@ Isso significa que, se você olhar para um número como a versão "1.2.3", poder
 - O número do meio é chamado de `Minor`, ou secundária. Se ele mudar, isso significará que um recurso será adicionado.
 - O número mais à direita é chamado de `Patch`. Se esse número aumentar, provavelmente significará que um bug foi corrigido.
 
-
-
-
-
-
-
 https://www.datacamp.com/tutorial/f-string-formatting-in-python?utm_source=google&utm_medium=paid_search&utm_campaignid=19589720824&utm_adgroupid=143216588537&utm_device=c&utm_keyword=&utm_matchtype=&utm_network=g&utm_adpostion=&utm_creative=665485585140&utm_targetid=aud-299261629574:dsa-1947282172981&utm_loc_interest_ms=&utm_loc_physical_ms=1001773&utm_content=dsa~page~community-tuto&utm_campaign=230119_1-sea~dsa~tutorials_2-b2c_3-row-p2_4-prc_5-na_6-na_7-le_8-pdsh-go_9-na_10-na_11-na-ltsjul23&gclid=CjwKCAjw8symBhAqEiwAaTA__ErOSRXBRe_RD5fQFsIVhfL13sIlElgjVZtwIrqaepXRsAnsrwPlLxoCTY0QAvD_BwE
