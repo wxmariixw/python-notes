@@ -1,6 +1,8 @@
 # Anotações
 Olá! Criei esse repositório para que possam acompanhar minha evolução na programação com __Python__, por aqui você não vai encontrar projetos de portifólio, nem projetos complexos, aqui é apenas um lugar pra eu compartilhar anotações, exercicios e compartilhar o acompanhamento da minha evolução em python, tenho outros repositórios de outras linguagens e estudos também, fique a vontade para me acompanhar nessa jornada!
 
+> Durante o primeiro semestre da faculdade de Análise e Desenvolvimento de Sistemas a linguagem que começamos a aprender foi Python, linguagem qual me identifiquei fortemente. Com isso achei melhor treinar o máximo possível e encontrei os exercicios da Wiki Python Brasil, codewars e outras plataformas de exercicios
+
 ## Checklist de estudos
 - [ ] Básico
   - [x] Sintaxe
